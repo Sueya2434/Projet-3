@@ -8,15 +8,28 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
+body a:link {
+  text-decoration: none;
+}
+body a:visited {
+  text-decoration: none;
+  color: black;
+}
 
 header {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 20px 0 0 0;
   padding-bottom: 10px;
+  position: relative;
 }
 header img {
   height: 30px;
+}
+header a {
+  position: absolute;
+  left: 10px;
 }
 
 .localisation {
@@ -43,7 +56,8 @@ header img {
 .description p {
   margin-top: 5px;
 }
-.description button {
+
+.button {
   background-color: #9356DC;
   color: white;
   border-radius: 30px;
@@ -51,6 +65,12 @@ header img {
   padding: 15px 15px;
   margin: auto;
   height: 50px;
+  width: 200px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .fonctionnement {
@@ -127,6 +147,63 @@ header img {
   margin: 5px 0 0 0;
 }
 
+.image_menu {
+  height: 300px;
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  background-size: cover;
+}
+
+.menu {
+  margin-top: -100px;
+  padding: 0 20px 50px 20px;
+  background-color: #E6E8E6;
+  border-radius: 40px 40px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.menu h2 {
+  font-weight: 300;
+  font-size: large;
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+}
+.menu .titre_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: large;
+}
+.menu .titre_menu h1 {
+  font-family: "Shrikhand", sans-serif;
+}
+.menu .titre_menu i {
+  padding-right: 20px;
+}
+.menu .carte_menu {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.menu .carte_menu .carte_menu_texte h3 {
+  margin: 10px 0 0 0;
+}
+.menu .carte_menu .carte_menu_texte p {
+  margin: 10px 0 10px 0;
+  height: 20px;
+  width: 250px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 footer {
   background-color: #121111;
   color: white;
@@ -134,8 +211,8 @@ footer {
 }
 footer ul {
   list-style-type: none;
-  margin-bottom: 0;
-  padding: 0 0 30px 0;
+  margin: 0;
+  padding: 10px 0 30px 0;
 }
 footer ul li {
   padding: 5px;
@@ -146,6 +223,10 @@ footer ul li:first-child {
 }
 footer ul li i {
   margin-right: 10px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
