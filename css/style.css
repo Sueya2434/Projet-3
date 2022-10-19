@@ -1,3 +1,151 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0 0;
+  padding-bottom: 10px;
+}
+header img {
+  height: 30px;
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E6E8E6;
+}
+.localisation i {
+  margin-right: 10px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 30px;
+  background-color: #F9FAF9;
+  padding: 30px;
+}
+.description h1 {
+  margin-bottom: 0;
+}
+.description p {
+  margin-top: 5px;
+}
+.description button {
+  background-color: #9356DC;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 15px;
+  margin: auto;
+  height: 50px;
+}
+
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 50px;
+}
+.fonctionnement button {
+  background-color: #F9FAF9;
+  border-radius: 20px;
+  border: none;
+  padding: 15px 15px;
+  height: 75px;
+  margin: 10px 15px 10px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+.fonctionnement button:hover i {
+  color: #9356DC;
+}
+.fonctionnement i {
+  margin-left: 0;
+  color: grey;
+}
+.fonctionnement p {
+  margin: 0 10%;
+}
+
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  background-color: #F9FAF9;
+  padding-left: 20px;
+  margin-bottom: 50px;
+}
+.restaurants h2 {
+  margin: 40px 0 0 0;
+}
+.restaurants .carte {
+  background-color: white;
+  border: white 0 solid;
+  border-radius: 15px;
+  margin: 20px 20px 0 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 225px;
+}
+.restaurants .carte img {
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.restaurants .carte .description-carte {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+.restaurants .carte .description-carte i {
+  font-size: larger;
+  margin-right: 10px;
+}
+.restaurants .carte .description-carte i:hover {
+  color: #9356DC;
+}
+.restaurants .carte .description-carte .texte-carte h3 {
+  margin: 10px 0 0 0;
+}
+.restaurants .carte .description-carte .texte-carte p {
+  margin: 5px 0 0 0;
+}
+
+footer {
+  background-color: #121111;
+  color: white;
+  padding-left: 20px;
+}
+footer ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding: 0 0 30px 0;
+}
+footer ul li {
+  padding: 5px;
+}
+footer ul li:first-child {
+  font-family: "Shrikhand", sans-serif;
+  padding: 10px 0;
+}
+footer ul li i {
+  margin-right: 10px;
+}
 
 /*# sourceMappingURL=style.css.map */
