@@ -15,12 +15,20 @@ body a:visited {
   text-decoration: none;
   color: black;
 }
+body a:focus {
+  text-decoration: none;
+  color: black;
+}
+body a:active {
+  text-decoration: none;
+  color: black;
+}
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   padding-bottom: 10px;
   position: relative;
 }
@@ -32,14 +40,95 @@ header a {
   left: 10px;
 }
 
+footer {
+  background-color: #121111;
+  color: white;
+  padding-left: 20px;
+}
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0 30px 0;
+}
+footer ul li {
+  padding: 5px;
+}
+footer ul li:first-child {
+  font-family: "Shrikhand", sans-serif;
+  padding: 10px 0;
+}
+footer ul li i {
+  margin-right: 10px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loader {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 9999;
+  animation: fade;
+  animation-duration: 0.2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+.loader::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 44vw;
+  top: 40%;
+  width: 12vw;
+  height: 12vw;
+  border-style: solid;
+  border-color: #99E2D0;
+  border-top-color: transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
 .localisation {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #E6E8E6;
+  padding: 15px 0;
 }
-.localisation i {
-  margin-right: 10px;
+.localisation input[type=search] {
+  background-color: #E6E8E6;
+  border: none;
+  font-size: medium;
+  text-align: center;
+  width: 150px;
 }
 
 .description {
@@ -58,7 +147,8 @@ header a {
 }
 
 .button {
-  background-color: #9356DC;
+  background: rgb(147, 86, 220);
+  background: linear-gradient(350deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   color: white;
   border-radius: 30px;
   border: none;
@@ -71,6 +161,8 @@ header a {
 }
 .button:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background: linear-gradient(350deg, rgba(147, 86, 220, 0.85) 0%, rgba(255, 121, 218, 0.85) 100%);
+  cursor: pointer;
 }
 
 .fonctionnement {
@@ -89,8 +181,27 @@ header a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   font-size: large;
+  cursor: pointer;
+  gap: 30px;
+}
+.fonctionnement button .chiffre_button {
+  margin-left: -30px;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  background-color: #9356DC;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: small;
+  align-items: center;
+  font-weight: bold;
+}
+.fonctionnement button:hover {
+  background-color: #E6E8E6;
 }
 .fonctionnement button:hover i {
   color: #9356DC;
@@ -98,9 +209,6 @@ header a {
 .fonctionnement i {
   margin-left: 0;
   color: grey;
-}
-.fonctionnement p {
-  margin: 0 10%;
 }
 
 .restaurants {
@@ -133,12 +241,25 @@ header a {
   justify-content: space-between;
   margin: 0 10px;
 }
+.restaurants .carte .description-carte .fa-stack {
+  text-align: right;
+}
+.restaurants .carte .description-carte .fa-stack:hover .fa-regular {
+  display: none;
+}
+.restaurants .carte .description-carte .fa-stack:hover .fa-solid {
+  display: unset;
+  background: linear-gradient(350deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 220, 0.85) 100%);
+  background-clip: text;
+  color: transparent;
+}
+.restaurants .carte .description-carte .fa-solid {
+  margin-left: -33px;
+  display: none;
+}
 .restaurants .carte .description-carte i {
   font-size: larger;
   margin-right: 10px;
-}
-.restaurants .carte .description-carte i:hover {
-  color: #9356DC;
 }
 .restaurants .carte .description-carte .texte-carte h3 {
   margin: 10px 0 0 0;
@@ -149,14 +270,15 @@ header a {
 
 .image_menu {
   height: 300px;
-  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 400px;
-  background-size: cover;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50px;
+  z-index: -1;
 }
 
 .menu {
-  margin-top: -100px;
+  margin-top: 200px;
   padding: 0 20px 50px 20px;
   background-color: #E6E8E6;
   border-radius: 40px 40px 0 0;
@@ -166,8 +288,12 @@ header a {
 .menu h2 {
   font-weight: 300;
   font-size: large;
-  border-bottom: 3px solid #99E2D0;
+}
+.menu h2::after {
+  content: "";
   width: 40px;
+  border-bottom: 3px solid #99E2D0;
+  display: block;
 }
 .menu .titre_menu {
   display: flex;
@@ -191,6 +317,9 @@ header a {
   margin-bottom: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+.menu .carte_menu:hover {
+  cursor: pointer;
+}
 .menu .carte_menu .carte_menu_texte h3 {
   margin: 10px 0 0 0;
 }
@@ -204,29 +333,44 @@ header a {
   text-overflow: ellipsis;
 }
 
-footer {
-  background-color: #121111;
-  color: white;
-  padding-left: 20px;
+@media (min-width: 960px) {
+  .centre_page {
+    display: flex;
+    justify-content: space-between;
+  }
+  .fonctionnement {
+    width: 30%;
+    min-width: 300px;
+  }
+  .fonctionnement h2 {
+    margin: 20px 0;
+  }
+  .restaurants {
+    width: 70%;
+  }
+  .restaurants h2 {
+    margin: 20px 0;
+  }
+  .cartes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cartes .carte {
+    width: 400px;
+    height: 275px;
+  }
+  .cartes .carte img {
+    height: 200px;
+  }
 }
-footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px 0 30px 0;
-}
-footer ul li {
-  padding: 5px;
-}
-footer ul li:first-child {
-  font-family: "Shrikhand", sans-serif;
-  padding: 10px 0;
-}
-footer ul li i {
-  margin-right: 10px;
-}
-footer ul li a {
-  text-decoration: none;
-  color: white;
+@media (min-width: 400px) {
+  .carte_menu_texte p {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: none !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
