@@ -166,21 +166,25 @@
             
             .fa-stack {
                 text-align: right;
+                transform: scaleX(1);
                 &:hover {
-                    .fa-regular {
-                        display: none;
-                    }
                     .fa-solid {
                         display: unset;
-                        background: linear-gradient(350deg, rgba(255,121,218,0.85) 0%, rgba(147,86,220,0.85) 100%);
-                        background-clip: text;
                         color: transparent;
+                        cursor: pointer;
                     }
                 }
             }
             .fa-solid {
                 margin-left: -33px;
                 display: none;
+                &:active {
+                        background: linear-gradient(350deg, rgba(255,121,218,0.85) 0%, rgba(147,86,220,0.85) 100%);
+                        background-clip: text;
+                        color: transparent;
+                        transform: scaleX(0);
+                        transition: transform 1000ms
+                }
 
             }
             i {

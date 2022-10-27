@@ -44,8 +44,41 @@
         padding: 0 10px;
         margin-bottom: 10px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        height: 80px;
+        position: relative;
+        .choix {
+            background-color: $tertiary-color;
+            height: 80px;
+            width: auto;
+            border-radius: 0 15px 15px 0;
+            display: none;
+            animation: choix 0.5s forwards ease-in-out;
+            margin-right: -10px;
+            margin-left: 10px;
+        }
         &:hover {
             cursor: pointer;
+            .choix {
+                display: inline;
+                }
+            }
+        }
+        @keyframes choix {
+            0% {
+                width: 0%;
+            }
+            25% {
+                width: 5%;
+            }
+            50% {
+                width: 10%;
+            }
+            75% {
+                width: 15%;
+            }
+            100% {
+                width: 20%;
+            }
         }
         
         .carte_menu_texte {
@@ -63,4 +96,4 @@
             }
         }
     }
-}
+

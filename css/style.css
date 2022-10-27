@@ -243,19 +243,23 @@ footer ul li a {
 }
 .restaurants .carte .description-carte .fa-stack {
   text-align: right;
-}
-.restaurants .carte .description-carte .fa-stack:hover .fa-regular {
-  display: none;
+  transform: scaleX(1);
 }
 .restaurants .carte .description-carte .fa-stack:hover .fa-solid {
   display: unset;
-  background: linear-gradient(350deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 220, 0.85) 100%);
-  background-clip: text;
   color: transparent;
+  cursor: pointer;
 }
 .restaurants .carte .description-carte .fa-solid {
   margin-left: -33px;
   display: none;
+}
+.restaurants .carte .description-carte .fa-solid:active {
+  background: linear-gradient(350deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 220, 0.85) 100%);
+  background-clip: text;
+  color: transparent;
+  transform: scaleX(0);
+  transition: transform 1000ms;
 }
 .restaurants .carte .description-carte i {
   font-size: larger;
@@ -316,14 +320,46 @@ footer ul li a {
   padding: 0 10px;
   margin-bottom: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 80px;
+  position: relative;
+}
+.menu .carte_menu .choix {
+  background-color: #99E2D0;
+  height: 80px;
+  width: auto;
+  border-radius: 0 15px 15px 0;
+  display: none;
+  animation: choix 0.5s forwards ease-in-out;
+  margin-right: -10px;
+  margin-left: 10px;
 }
 .menu .carte_menu:hover {
   cursor: pointer;
 }
-.menu .carte_menu .carte_menu_texte h3 {
+.menu .carte_menu:hover .choix {
+  display: inline;
+}
+@keyframes choix {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 5%;
+  }
+  50% {
+    width: 10%;
+  }
+  75% {
+    width: 15%;
+  }
+  100% {
+    width: 20%;
+  }
+}
+.menu .carte_menu_texte h3 {
   margin: 10px 0 0 0;
 }
-.menu .carte_menu .carte_menu_texte p {
+.menu .carte_menu_texte p {
   margin: 10px 0 10px 0;
   height: 20px;
   width: 250px;
