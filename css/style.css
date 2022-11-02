@@ -8,6 +8,9 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
+body a {
+  color: black;
+}
 body a:link {
   text-decoration: none;
 }
@@ -228,6 +231,15 @@ footer ul li a {
   margin: 20px 20px 0 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: 225px;
+  position: relative;
+}
+.restaurants .carte .nouveau {
+  position: absolute;
+  color: green;
+  background-color: #99E2D0;
+  left: 70%;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 .restaurants .carte img {
   height: 150px;
@@ -241,25 +253,32 @@ footer ul li a {
   justify-content: space-between;
   margin: 0 10px;
 }
-.restaurants .carte .description-carte .fa-stack {
+.restaurants .carte .description-carte .coeur {
   text-align: right;
-  transform: scaleX(1);
-}
-.restaurants .carte .description-carte .fa-stack:hover .fa-solid {
-  display: unset;
-  color: transparent;
-  cursor: pointer;
 }
 .restaurants .carte .description-carte .fa-solid {
   margin-left: -33px;
-  display: none;
+  opacity: 0;
+  background: linear-gradient(350deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 220, 0.85) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-size: 100% 200%;
+  transition: all 0.6s linear;
+}
+.restaurants .carte .description-carte .fa-solid:hover {
+  cursor: pointer;
 }
 .restaurants .carte .description-carte .fa-solid:active {
   background: linear-gradient(350deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 220, 0.85) 100%);
   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
-  transform: scaleX(0);
-  transition: transform 1000ms;
+  cursor: pointer;
+  opacity: 1;
+  background-position: 0% 100%;
 }
 .restaurants .carte .description-carte i {
   font-size: larger;
@@ -279,6 +298,33 @@ footer ul li a {
   position: absolute;
   top: 50px;
   z-index: -1;
+}
+
+@keyframes menufade {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+.categorie_1 {
+  opacity: 0;
+  animation: menufade 1.5s forwards;
+}
+
+.categorie_2 {
+  opacity: 0;
+  animation: menufade 1.5s forwards;
+  animation-delay: 1s;
+}
+
+.categorie_3 {
+  opacity: 0;
+  animation: menufade 1.5s forwards;
+  animation-delay: 2s;
 }
 
 .menu {
@@ -311,59 +357,70 @@ footer ul li a {
 .menu .titre_menu i {
   padding-right: 20px;
 }
+@keyframes check {
+  from {
+    margin-right: -110px;
+  }
+  to {
+    margin-right: 0px;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .menu .carte_menu {
   background-color: white;
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
   margin-bottom: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: 80px;
-  position: relative;
+  overflow: hidden;
 }
 .menu .carte_menu .choix {
   background-color: #99E2D0;
   height: 80px;
-  width: auto;
   border-radius: 0 15px 15px 0;
-  display: none;
-  animation: choix 0.5s forwards ease-in-out;
-  margin-right: -10px;
-  margin-left: 10px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  margin-right: -110px;
+}
+.menu .carte_menu .choix .fa-circle-check {
+  color: white;
+  font-size: larger;
+  align-self: center;
 }
 .menu .carte_menu:hover {
   cursor: pointer;
 }
 .menu .carte_menu:hover .choix {
-  display: inline;
+  animation: check 1s forwards;
 }
-@keyframes choix {
-  0% {
-    width: 0%;
-  }
-  25% {
-    width: 5%;
-  }
-  50% {
-    width: 10%;
-  }
-  75% {
-    width: 15%;
-  }
-  100% {
-    width: 20%;
-  }
+.menu .carte_menu:hover .choix .fa-circle-check {
+  animation: spin 0.8s forwards;
+  animation-delay: 0.2s;
+}
+.menu .carte_menu_texte {
+  width: 70%;
 }
 .menu .carte_menu_texte h3 {
   margin: 10px 0 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menu .carte_menu_texte p {
   margin: 10px 0 10px 0;
   height: 20px;
-  width: 250px;
-  display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -400,6 +457,19 @@ footer ul li a {
   }
   .cartes .carte img {
     height: 200px;
+  }
+  .categories {
+    display: flex;
+    justify-content: space-between;
+  }
+  .categories .categorie_1 {
+    width: 32%;
+  }
+  .categories .categorie_2 {
+    width: 32%;
+  }
+  .categories .categorie_3 {
+    width: 32%;
   }
 }
 @media (min-width: 400px) {

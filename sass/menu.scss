@@ -6,6 +6,30 @@
     top: 50px;
     z-index: -1;
 }
+@keyframes menufade {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+.categorie_1 {
+    opacity: 0;
+    animation: menufade 1.5s forwards;
+}
+.categorie_2 {
+    opacity: 0;
+    animation: menufade 1.5s forwards;
+    animation-delay: 1s;
+}
+.categorie_3 {
+    opacity: 0;
+    animation: menufade 1.5s forwards;
+    animation-delay: 2s;
+}
 .menu {
     margin-top: 200px;
     padding: 0 20px 50px 20px;
@@ -35,61 +59,69 @@
             padding-right: 20px;
         }
     }
+    @keyframes check {
+        from {
+            margin-right: -110px;
+        }
+        to {
+            margin-right: 0px;
+        }
+    }
+    @keyframes spin {
+        from {
+            transform:rotate(0deg);
+        }
+        to {
+            transform:rotate(360deg);
+        }
+    }
     .carte_menu {
         background-color: white;
         border-radius: 15px;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding: 0 10px;
+        padding: 0 0 0 10px;
         margin-bottom: 10px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         height: 80px;
-        position: relative;
+        overflow: hidden;
         .choix {
             background-color: $tertiary-color;
             height: 80px;
-            width: auto;
             border-radius: 0 15px 15px 0;
-            display: none;
-            animation: choix 0.5s forwards ease-in-out;
-            margin-right: -10px;
-            margin-left: 10px;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            margin-right: -110px;
+            .fa-circle-check {
+                color: white;
+                font-size: larger;
+                align-self: center;
+            }
         }
         &:hover {
             cursor: pointer;
             .choix {
-                display: inline;
+                animation: check 1s forwards;
+                .fa-circle-check {
+                    animation: spin 0.8s forwards;
+                    animation-delay: 0.2s;
+                }
                 }
             }
-        }
-        @keyframes choix {
-            0% {
-                width: 0%;
-            }
-            25% {
-                width: 5%;
-            }
-            50% {
-                width: 10%;
-            }
-            75% {
-                width: 15%;
-            }
-            100% {
-                width: 20%;
-            }
-        }
-        
+        }       
         .carte_menu_texte {
+            width: 70%;
             h3 {
                 margin: 10px 0 0 0;
+                overflow: hidden ;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             p {
                 margin: 10px 0 10px 0;
                 height: 20px;
-                width: 250px;
-                display: inline-block;
                 overflow: hidden ;
                 white-space: nowrap;
                 text-overflow: ellipsis;

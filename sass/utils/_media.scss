@@ -31,6 +31,19 @@
             }
         }
     }
+    .categories {
+        display: flex;
+        justify-content: space-between;
+        .categorie_1 {
+            width: 32%;
+        }
+        .categorie_2 {
+            width: 32%;
+        }
+        .categorie_3 {
+            width: 32%;
+        }
+    }
 }
 @media (min-width: 400px) {
     .carte_menu_texte {
