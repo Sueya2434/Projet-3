@@ -5,14 +5,14 @@
         justify-content: space-between;
     }
     .fonctionnement {
-        width: 30%;
+        width: 50%;
         min-width: 300px;
         h2 {
             margin: 20px 0;
         }
     }
     .restaurants {
-        width: 70%;
+        width: 50%;
         background-color: white;
         h2 {
             margin: 20px 0;
@@ -50,7 +50,22 @@
         p {
             overflow: visible;
             white-space: normal;
-            text-overflow: none !important;
+        }
+    }
+}
+@media (min-width: 1250px) {
+    .fonctionnement {
+        width: 30%;
+        min-width: 300px;
+        h2 {
+            margin: 20px 0;
+        }
+    }
+    .restaurants {
+        width: 70%;
+        background-color: white;
+        h2 {
+            margin: 20px 0;
         }
     }
 }
