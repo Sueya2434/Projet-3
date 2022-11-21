@@ -58,9 +58,15 @@
         .coeur {
             text-align: right;
             margin-right: 20px;
+            &:active {
+                .fa-regular {
+                    opacity: 0;
+                }
+            }
         }
         .fa-solid {
-            margin-left: -22px;
+            margin-left: -29px;
+            font-size: 25px;
             opacity: 0;
             background: linear-gradient(350deg, rgba(255,121,218,0.85) 0%, rgba(147,86,220,0.85) 100%);
             background-clip: text;
@@ -81,6 +87,14 @@
                     cursor: pointer;
                     opacity: 1;
                     background-position: 0% 100%;
+            }
+        }
+        .fa-regular {
+            font-size: 25px;
+            opacity: 1;
+            transition: all 0.6s linear;
+            &:active {
+                opacity: 0;
             }
         }
     }
