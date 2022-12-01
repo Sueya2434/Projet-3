@@ -215,7 +215,7 @@ footer ul li a {
   width: 100%;
 }
 .fonctionnement button:hover {
-  background-color: #E6E8E6;
+  background-color: #f5edff;
 }
 .fonctionnement button:hover i {
   color: #9356DC;
@@ -266,13 +266,16 @@ footer ul li a {
   margin: 0 10px;
 }
 .restaurants .carte .description-carte .coeur {
+  position: relative;
   text-align: right;
+  margin-right: 10px;
 }
 .restaurants .carte .description-carte .coeur:active .fa-regular {
   opacity: 0;
 }
 .restaurants .carte .description-carte .fa-solid {
-  margin-left: -39px;
+  position: absolute;
+  left: 0;
   opacity: 0;
   background: linear-gradient(350deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 220, 0.85) 100%);
   background-clip: text;
@@ -306,7 +309,6 @@ footer ul li a {
 }
 .restaurants .carte .description-carte i {
   font-size: larger;
-  margin-right: 10px;
 }
 .restaurants .carte .description-carte .texte-carte h3 {
   margin: 10px 0 0 0;
@@ -381,12 +383,14 @@ footer ul li a {
 .menu .titre_menu .coeur {
   text-align: right;
   margin-right: 20px;
+  position: relative;
 }
 .menu .titre_menu .coeur:active .fa-regular {
   opacity: 0;
 }
 .menu .titre_menu .fa-solid {
-  margin-left: -29px;
+  position: absolute;
+  left: 0;
   font-size: 25px;
   opacity: 0;
   background: linear-gradient(350deg, rgba(255, 121, 218, 0.85) 0%, rgba(147, 86, 220, 0.85) 100%);

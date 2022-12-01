@@ -58,6 +58,7 @@
         .coeur {
             text-align: right;
             margin-right: 20px;
+            position: relative;
             &:active {
                 .fa-regular {
                     opacity: 0;
@@ -65,7 +66,8 @@
             }
         }
         .fa-solid {
-            margin-left: -29px;
+            position: absolute;
+            left: 0;
             font-size: 25px;
             opacity: 0;
             background: linear-gradient(350deg, rgba(255,121,218,0.85) 0%, rgba(147,86,220,0.85) 100%);
